@@ -1,0 +1,239 @@
+body {
+  background: #55b188 center center fixed;
+  background: -moz-linear-gradient(left,  #55b188 0%, #46a691 55%, #415e9b 90%);
+  background-image: -webkit-linear-gradient(left,  #55b188 0%,#46a691 55%,#415e9b 90%);
+  background-image: linear-gradient(to right,  #55b188 0%,#46a691 55%,#415e9b 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55b188', endColorstr='#415e9b',GradientType=1 );
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: static;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flashcard-container {
+    top: 22%;
+    min-height: 45%;
+    max-height: 50%;
+    left:      24%;
+    min-width: 55%;
+    max-width: 65%;
+    position: absolute;
+    overflow: hidden;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+/*BEGIN FLIPPING FUNCTIONALITY----------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+/* entire container, keeps perspective */
+.flashcard-container {
+	perspective: 1000;
+}
+	/* flip the pane when clicked (using javascript) */
+	.flashcard-container.clicked .flipper {
+		transform: rotateY(180deg);
+	}
+
+.front-of-flashcard, .back-of-flashcard {
+  background-color: #E0DEDF;
+	width: 100%;
+	height: 100%;
+  border: black;
+  border-style: solid;
+
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  margin: 0 1rem;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  color: #41403E;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  outline: none;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 7px #41403E;
+
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+/* hide back of pane during swap */
+.front-of-flashcard, .back-of-flashcard {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+/* front pane, placed above back */
+.front-of-flashcard {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back-of-flashcard {
+	transform: rotateY(180deg);
+}
+
+/*END   FLIPPING FUNCTIONALITY----------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+
+
+
+.learning-word-image-container {
+  max-height: 52%;
+  min-height: 57%;
+  background-color: #AFA99E;
+  max-width: 39%;
+  min-width: 32%;
+  position: absolute;
+  display: block;
+  left: 2%;
+  top: 15%;
+  overflow: hidden;
+}
+
+#learning-word-image {
+  /* max-height: 100%; */
+  /* min-height: 100%; */
+  /* min-width: 100%; */
+  /* max-width: 100%; */
+  position: relative;
+  z-index: 1;
+}
+
+#learning-word-image-back{
+  z-index: 1;
+}
+
+
+
+
+.flashcard-audio-image {
+  position: absolute;
+  right: 1.5%;
+  bottom: 1.5%;
+}
+
+.flashcard-text {
+  position: absolute;
+  font-size: -webkit-xxx-large;
+}
+
+
+.learning-word-text {
+  top: 13%;
+  left: 50%;
+}
+
+.answer-word-text {
+  font-size: 4.5vw;
+  top: 12%;
+  left: 56%;
+}
+
+.learning-word-back {
+  font-size: 4vw;
+  top: 21%;
+  left: 30%;
+}
+
+#answer-form {left: 50%;top: 68%;position: absolute;}
+
+#flashcard-answer-box {}
+
+#next-flashcard-button{
+  font-size: 1.5vw;
+  top: 0%;
+  position: relative;
+}
+
+/* From http://codepen.io/tmrDevelops/pen/VeRvKX */
+.front-of-flashcard, .back-of-flashcard {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 0 0.25rem;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  color: #41403E;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  outline: none;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 7px #41403E;
+  overflow: hidden;
+}
+
+#first-score-signal-image{height: 15%;width: 10%;position: absolute;bottom: 3.5%;left: 23.5%;}
+
+
+#completed-deck-message{
+  position: absolute;
+  top: 30%;left: 32%;
+  min-height: 30%;
+  min-width: 38%;
+  background-color: orange;
+  display: none;
+}
